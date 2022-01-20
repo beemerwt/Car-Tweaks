@@ -1,0 +1,17 @@
+module Base
+{
+    recipe Make Spare Engine Parts
+    {
+        SmallSheetMetal,
+        Aluminum=2,
+        BlowTorch=8,
+        keep WeldingMask,
+
+        Result:EngineParts,
+        Time:250.0,
+        Category:Welding,
+        SkillRequired:MetalWelding=4;Mechanics=4;,
+        OnGiveXP:Recipe.OnGiveXP.MetalWelding15,
+        NeedToBeLearn:true,
+    }
+}
