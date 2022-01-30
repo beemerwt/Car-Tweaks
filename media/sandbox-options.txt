@@ -1,0 +1,13 @@
+VERSION = 1,
+
+option CarTweaks.IgnoreEngineLevelForTake
+{
+	type = boolean, default = true,
+	page = CarTweaks, translation = CarTweaksIgnoreEngineLevelForTake,
+}
+
+option CarTweaks.IgnoreEngineLevelForRepair
+{
+	type = boolean,  default = true,
+	page = CarTweaks, translation = CarTweaksIgnoreEngineLevelForRepair,
+}

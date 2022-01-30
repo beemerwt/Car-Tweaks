@@ -38,6 +38,11 @@ function ISRepairEngine:perform()
 	self.item:setJobDelta(0)
 
 	local skill = self.character:getPerkLevel(Perks.Mechanics);
+	local ignoreEngineLevel = SandboxVars.CarTweaks.IgnoreEngineLevelForRepair
+	if ignoreEngineLevel == false then
+		-- subtract levels for engines with repair lvl >4
+		skill = skill - self.vehicle:getScript():getEngineRepairLevel() + 4; 
+	end
 	local numberOfParts = self.character:getInventory():getNumberOfItem("EngineParts", false, true);
 	local args = { vehicle = self.vehicle:getId(), condition = self.part:getCondition(), skillLevel = skill, numberOfParts = numberOfParts }
 	args.giveXP = self.character:getMechanicsItem(self.part:getVehicle():getMechanicalID() .. "2") == nil

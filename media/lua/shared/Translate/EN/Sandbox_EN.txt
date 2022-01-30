@@ -1,0 +1,7 @@
+Sandbox_EN = {
+	Sandbox_CarTweaks = "Car Tweaks",
+	Sandbox_CarTweaksIgnoreEngineLevelForTake = "Ignore Engine Level for Take Engine Parts",
+	Sandbox_CarTweaksIgnoreEngineLevelForTake_tooltip = "If disabled, higher engine levels will gain less engine parts.",
+	Sandbox_CarTweaksIgnoreEngineLevelForRepair = "Ignore Engine Level for Repair Engine Action",
+	Sandbox_CarTweaksIgnoreEngineLevelForRepair_tooltip = "If disabled, higher engine levels will repair less per engine part."
+	}
