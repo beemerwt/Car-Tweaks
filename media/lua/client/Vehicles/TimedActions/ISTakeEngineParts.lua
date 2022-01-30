@@ -31,6 +31,11 @@ function ISTakeEngineParts:perform()
 	self.item:setJobDelta(0)
 
 	local skill = self.character:getPerkLevel(Perks.Mechanics);
+	local ignoreEngineLevel = SandboxVars.CarTweaks.IgnoreEngineLevelForTake
+	if ignoreEngineLevel == false then
+		-- subtract levels for engines with repair lvl >4
+		skill = skill - self.vehicle:getScript():getEngineRepairLevel() + 4; 
+	end
 	local args = { vehicle = self.vehicle:getId(), skillLevel = skill, addXp = shouldAddXp }
 	args.giveXP = self.character:getMechanicsItem(self.part:getVehicle():getMechanicalID() .. "3") == nil
 
